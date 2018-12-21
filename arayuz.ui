@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dlgArayuz</class>
+ <widget class="QDialog" name="dlgArayuz">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1206</width>
+    <height>679</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lblDosyaAdi">
+       <property name="text">
+        <string>Dosya adi</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Frame No:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="editFrameNo"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAnaliz">
+       <property name="text">
+        <string>Analize basla</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnDosyaSec">
+       <property name="text">
+        <string>Dosya Sec</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="lblResim">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>600</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblSkin">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>600</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblHistogram">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="sliderFrame">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>editFrameNo</sender>
+   <signal>returnPressed()</signal>
+   <receiver>dlgArayuz</receiver>
+   <slot>loadFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnAnaliz</sender>
+   <signal>clicked()</signal>
+   <receiver>dlgArayuz</receiver>
+   <slot>analyze()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>792</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>779</x>
+     <y>3</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDosyaSec</sender>
+   <signal>clicked()</signal>
+   <receiver>dlgArayuz</receiver>
+   <slot>loadFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>896</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>877</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderFrame</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>dlgArayuz</receiver>
+   <slot>loadFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>740</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>752</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>loadFrame()</slot>
+  <slot>analyze()</slot>
+  <slot>loadFile()</slot>
+ </slots>
+</ui>
