@@ -34,7 +34,7 @@ class MainWindow(QDialog, Ui_dlgArayuz):
 
     def analyze(self):
         
-        numframes = self.video.info.frame_count
+        numframes = int(self.video.info.frame_count)
         for i in range(numframes):
             
             pass
@@ -42,7 +42,7 @@ class MainWindow(QDialog, Ui_dlgArayuz):
         fname, _ = QFileDialog.getOpenFileName(self, 'Open file', '.')
         self.video = VideoFile(fname)
         self.lblDosyaAdi.setText(fname)
-        self.video.locate_frame(3000)
+        self.video.locate_frame(30)
         self.loadFrame()
 
 
