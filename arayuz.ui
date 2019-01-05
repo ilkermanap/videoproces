@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1206</width>
-    <height>679</height>
+    <height>785</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,6 +57,13 @@
       <widget class="QPushButton" name="btnDosyaSec">
        <property name="text">
         <string>Dosya Sec</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnYuzDosyasi">
+       <property name="text">
+        <string>Yuz dosyasi sec</string>
        </property>
       </widget>
      </item>
@@ -123,8 +130,8 @@
    <slot>loadFrame()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>471</x>
-     <y>20</y>
+     <x>898</x>
+     <y>30</y>
     </hint>
     <hint type="destinationlabel">
      <x>322</x>
@@ -139,8 +146,8 @@
    <slot>analyze()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>792</x>
-     <y>16</y>
+     <x>994</x>
+     <y>26</y>
     </hint>
     <hint type="destinationlabel">
      <x>779</x>
@@ -155,8 +162,8 @@
    <slot>loadFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>896</x>
-     <y>20</y>
+     <x>1085</x>
+     <y>30</y>
     </hint>
     <hint type="destinationlabel">
      <x>877</x>
@@ -171,12 +178,28 @@
    <slot>loadFrame()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>50</x>
-     <y>740</y>
+     <x>59</x>
+     <y>775</y>
     </hint>
     <hint type="destinationlabel">
      <x>2</x>
      <y>752</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnYuzDosyasi</sender>
+   <signal>clicked()</signal>
+   <receiver>dlgArayuz</receiver>
+   <slot>face_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1135</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1143</x>
+     <y>4</y>
     </hint>
    </hints>
   </connection>
@@ -185,5 +208,6 @@
   <slot>loadFrame()</slot>
   <slot>analyze()</slot>
   <slot>loadFile()</slot>
+  <slot>face_file()</slot>
  </slots>
 </ui>

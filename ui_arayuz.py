@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'arayuz.ui'
 #
-# Created: Mon Oct 22 13:23:31 2018
+# Created: Sat Jan  5 13:51:44 2019
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PySide import QtCore, QtGui
 class Ui_dlgArayuz(object):
     def setupUi(self, dlgArayuz):
         dlgArayuz.setObjectName("dlgArayuz")
-        dlgArayuz.resize(1206, 679)
+        dlgArayuz.resize(1206, 785)
         self.verticalLayout = QtGui.QVBoxLayout(dlgArayuz)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtGui.QHBoxLayout()
@@ -34,6 +34,9 @@ class Ui_dlgArayuz(object):
         self.btnDosyaSec = QtGui.QPushButton(dlgArayuz)
         self.btnDosyaSec.setObjectName("btnDosyaSec")
         self.horizontalLayout.addWidget(self.btnDosyaSec)
+        self.btnYuzDosyasi = QtGui.QPushButton(dlgArayuz)
+        self.btnYuzDosyasi.setObjectName("btnYuzDosyasi")
+        self.horizontalLayout.addWidget(self.btnYuzDosyasi)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -60,6 +63,7 @@ class Ui_dlgArayuz(object):
         QtCore.QObject.connect(self.btnAnaliz, QtCore.SIGNAL("clicked()"), dlgArayuz.analyze)
         QtCore.QObject.connect(self.btnDosyaSec, QtCore.SIGNAL("clicked()"), dlgArayuz.loadFile)
         QtCore.QObject.connect(self.sliderFrame, QtCore.SIGNAL("sliderReleased()"), dlgArayuz.loadFrame)
+        QtCore.QObject.connect(self.btnYuzDosyasi, QtCore.SIGNAL("clicked()"), dlgArayuz.face_file)
         QtCore.QMetaObject.connectSlotsByName(dlgArayuz)
 
     def retranslateUi(self, dlgArayuz):
@@ -68,6 +72,7 @@ class Ui_dlgArayuz(object):
         self.label.setText(QtGui.QApplication.translate("dlgArayuz", "Frame No:", None, QtGui.QApplication.UnicodeUTF8))
         self.btnAnaliz.setText(QtGui.QApplication.translate("dlgArayuz", "Analize basla", None, QtGui.QApplication.UnicodeUTF8))
         self.btnDosyaSec.setText(QtGui.QApplication.translate("dlgArayuz", "Dosya Sec", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnYuzDosyasi.setText(QtGui.QApplication.translate("dlgArayuz", "Yuz dosyasi sec", None, QtGui.QApplication.UnicodeUTF8))
         self.lblResim.setText(QtGui.QApplication.translate("dlgArayuz", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lblSkin.setText(QtGui.QApplication.translate("dlgArayuz", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lblHistogram.setText(QtGui.QApplication.translate("dlgArayuz", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))

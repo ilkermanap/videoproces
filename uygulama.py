@@ -10,19 +10,23 @@ class MainWindow(QDialog, Ui_dlgArayuz):
     def __init__(self, app = None):
         super(MainWindow, self).__init__()
         self.app = app
+        self.faces = {}
+        self.face = None
         self.video = None
         self.setupUi(self)
         self.show()
+
+        
         
     def loadFrame(self, frameno=None):
         if frameno is None:
-            state, picture = self.video.export_image()
+            ytate, picture = self.video.export_image()
             if state:
                 newp = cv2.cvtColor(picture.image, cv2.COLOR_BGR2RGB)
                 qimg = QImage(newp,newp.shape[1], newp.shape[0], QImage.Format_RGB888)
                 pixmap01 = QPixmap.fromImage(qimg)
                 self.lblResim.setPixmap(pixmap01)
-
+                picture.find_faces()
                 count, skin = picture.check_skin()
                 skin = cv2.cvtColor(skin, cv2.COLOR_BGR2RGB)
             
@@ -32,21 +36,23 @@ class MainWindow(QDialog, Ui_dlgArayuz):
                 self.lblSkin.setPixmap(pixmap02)
                 
 
-    def analyze(self):
-        
+    def analyze(self):        
         numframes = int(self.video.info.frame_count)
         for i in range(numframes):
+            state, picture = self.video.export_image()
+            picture.find_faces()
+            self.faces[i] = picture.faces
+
+    def face_file(self):
+        fname, _ = QFileDialog.getOpenFileName(self, 'Open file', '.')
+        self.face = Picture(fname)
             
-            pass
     def loadFile(self):
         fname, _ = QFileDialog.getOpenFileName(self, 'Open file', '.')
         self.video = VideoFile(fname)
         self.lblDosyaAdi.setText(fname)
         self.video.locate_frame(30)
         self.loadFrame()
-
-
-
         pass
     
         
