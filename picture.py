@@ -4,10 +4,10 @@ import face_recognition as fr
 
 class Picture:
     def __init__(self, data):
-        if type(data) is str:
-            self.image = cv2.imread(data)
-        else:
+        if type(data) is not str and type(data) is not unicode:
             self.image = data
+        else:
+            self.image = cv2.imread(data)
         self.faces = {}
         self.rgb = self.image[:, :, ::-1]
         self.face_encodings = []
